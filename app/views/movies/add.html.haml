@@ -1,0 +1,82 @@
+#content
+	#content_inside2
+		#title
+			AGREGAR PELICULA
+			%br/
+			%br/
+		%hr
+			#add
+				#add_picture
+					%img{:alt => "", :height => "318", :src => "/assets/picture.jpg", :width => "250"}/
+					= succeed "Cambiar" do
+						%br/
+				#add_info
+					%table
+						%tr
+							%td Titulo (ESP):
+							%td
+								%input.add{:size => "25", :type => "text", :value => "TITULO ESPANOL"}/
+						%tr
+							%td Titulo (ENG):
+							%td
+								%input.add{:size => "25", :type => "text", :value => "TITULO INGLES"}/
+						%tr
+							%td Cantidad:
+							%td
+								%input.add{:size => "25", :type => "text", :value => "CANTIDAD"}/
+						%tr
+							%td Categoria:
+							%td
+								%SELECT
+									%OPTION{:SELECTED => "", :VALUE => ""} Seleccionar
+									%OPTION Comedia
+									%OPTION Horror
+									%OPTION etc
+						%tr
+							%td IMDB ID:
+							%td
+								%input.add{:size => "25", :type => "text", :value => "ID"}/
+						%tr
+							%td Descripcion:
+							%td
+								%textarea.descripcion{:cols => "52", :name => "Descrip", :rows => "5"} Descripcion
+				#add_extra
+					%table
+						%tr
+							%td Calidad
+							%td
+								%SELECT.add{:NAME => "Categoria"}
+									%OPTION{:SELECTED => "", :VALUE => ""} Seleccionar
+									%OPTION Original
+									%OPTION Cine
+									%OPTION Estandar
+							%td Menu
+							%td
+								%SELECT.add{:NAME => "Categoria"}
+									%OPTION{:SELECTED => "", :VALUE => ""} Seleccionar
+									%OPTION SI
+									%OPTION NO
+						%tr
+							%td Tipo
+							%td
+								%SELECT{:NAME => "Categoria"}
+									%OPTION{:SELECTED => "", :VALUE => ""} Seleccionar
+									%OPTION BluRay
+									%OPTION DVD
+							%td
+							%td
+						%tr
+							%td Director:
+							%td
+								%input.add{:size => "25", :type => "text", :value => "DIRECTOR"}/
+							%td
+							%td
+						%td Actores:
+						%td
+							%input.add{:size => "25", :type => "text", :value => "ACTORES"}/
+						%td
+						%td
+				%input.button_add{:type => "submit", :value => "Agregar"}
+			%br/
+			%br/
+			%br/
