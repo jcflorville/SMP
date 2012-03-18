@@ -1,0 +1,2 @@
+class ReturnsController < ApplicationController
+end
