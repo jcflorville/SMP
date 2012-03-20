@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+%html
+	%head
+		%title SMP - Sistema de Manejo de Peliculas
+		= stylesheet_link_tag    "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+		%script{:src => "/assets/jquery-latest.js", :type => "text/javascript"}
+		:javascript
+			$(document).ready(function(){
+
+				$("ul.subnav").parent().append(""); //Only shows drop down trigger when js is enabled - Adds empty span tag after ul.subnav
+				
+				$("ul.topnav li a").click(function() { //When trigger is clicked...
+					
+					//Following events are applied to the subnav itself (moving subnav up and down)
+					$(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+
+					$(this).parent().hover(function() {
+					}, function(){	
+						$(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+					});
+
+					//Following events are applied to the trigger (Hover events for the trigger)
+					}).hover(function() { 
+						$(this).addClass("subhover"); //On hover over, add class "subhover"
+					}, function(){	//On Hover Out
+						$(this).removeClass("subhover"); //On hover out, remove class "subhover"
+				});
+
+			});
+%body
+	#body
+		#htopnav
+			#hcontent
+				#hlogo
+					%img{:alt => "", :height => "27", :src => "/assets/logo_smp.png", :width => "60"}/
+				#menu
+					%ul.topnav
+						%li
+							%a{:href => "/movies"} INICIO
+						%li
+							%a{:href => "/sales/new"} VENDER
+						%li
+							%a{:href => "/returns/new"} RETORNAR
+						%li
+							%a{:href => "index.html"} BUSCAR
+						%li
+							%a{:href => "#"} PELICULAS
+							%ul.subnav
+								%li
+									%a{:href => "/movies/new"} Agregar
+								%li
+									%a{:href => "#"} Modificar
+								%li
+									%a{:href => "#"} Eliminar
+							%span
+						%li
+							%a{:href => "#"} HERRAMIENTAS
+							%ul.subnav
+								%li
+									%a{:href => "#"} Generar Etiquetas
+							%span
+						%li
+							%a{:href => "#"} AYUDA
+							%ul.subnav
+								%li
+									%a{:href => "#"} Ayuda
+								%li
+									%a{:href => "#"} Soporte
+								%li
+									%a{:href => "#"} Acerca de SMP
+							%span
+		= yield

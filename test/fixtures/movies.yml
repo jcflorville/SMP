@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title_eng: MyString
+  title_esp: MyString
+  stock: 1
+  category: MyString
+  imdb: MyString
+  description: MyString
+  quality: MyString
+  type_movie: MyString
+  menu: MyString
+  cast: MyString
+  directors: MyString
+  code: MyString
+
+two:
+  title_eng: MyString
+  title_esp: MyString
+  stock: 1
+  category: MyString
+  imdb: MyString
+  description: MyString
+  quality: MyString
+  type_movie: MyString
+  menu: MyString
+  cast: MyString
+  directors: MyString
+  code: MyString

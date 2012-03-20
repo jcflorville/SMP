@@ -1,0 +1,49 @@
+#content
+	#content_inside2
+		#title
+			VENDER PELICULAS
+			%br/
+			%br/
+		%hr
+			#sale
+				#sale_info
+					Codigo:
+					%input.sale{:size => "25", :type => "text", :value => "CODIGO"}
+						%input.button_sale{:type => "submit", :value => "Agregar"}
+							%br/
+							%br/
+							%br/
+							#title
+								PELICULAS
+								%br/
+								%br/
+							%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
+								%thead
+									%tr
+										%th{:scope => "col"} Codigo
+										%th{:scope => "col"} Titulo
+										%th{:scope => "col"} Cantidad
+								%tfoot
+									%tr
+										%td{:colspan => "3"}
+											%em
+								%tbody
+									%tr
+										%td 1
+										%td Hugo
+										%td
+											%input{:size => "1", :type => "text", :value => "1"}/
+									%tr
+										%td 1
+										%td Hugo
+										%td
+											%input{:size => "1", :type => "text", :value => "1"}/
+									%tr
+										%td 1
+										%td Hugo
+										%td
+											%input{:size => "1", :type => "text", :value => "1"}/
+				%input.button_add{:type => "submit", :value => "Vender"}
+			%br/
+			%br/
+			%br/

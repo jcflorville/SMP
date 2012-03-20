@@ -1,0 +1,68 @@
+#content
+	#content_inside2
+		#title
+			AGREGAR PELICULA
+			%br/
+			%br/
+		%hr
+			= form_for(@movie) do |m|
+				#add
+					#add_picture
+						%img{:alt => "", :height => "318", :src => "/assets/picture.jpg", :width => "250"}
+						Cambiar
+					#add_info
+						%table
+							%tr
+								%td Titulo (ESP):
+								%td
+									= m.text_field :title_esp, :size => 25, :placeholder => "TITULO ESPANOL", :class => "add"
+							%tr
+								%td Titulo (ENG):
+								%td
+									= m.text_field :title_eng, :size => 25, :placeholder => "TITULO INGLES", :class => "add"
+							%tr
+								%td Cantidad:
+								%td
+									= m.text_field :stock, :size => 25, :placeholder => "Cantidad", :class => "add"
+							%tr
+								%td Categoria:
+								%td
+									= m.select(:category, [["Seleccionar",1],["Comedia","Comedia"],["Horror","Horror"],["Etc","Etc"]])
+							%tr
+								%td IMDB ID:
+								%td
+									= m.text_field :imdb, :size => 25, :placeholder => "ID", :class => "add"
+							%tr
+								%td Descripcion:
+								%td
+									= m.text_area :description, :cols => "52", :name => "Descrip", :rows => "4", :class => "descripcion" 
+					#add_extra
+						%table
+							%tr
+								%td Calidad
+								%td
+									= m.select(:quality, [["Seleccionar",1],["Original","Original"],["Cine","Cine"],["Estandar","Estandar"]])
+								%td Menu
+								%td
+									= m.select(:menu, [["Seleccionar",1],["SI","SI"],["NO","NO"]])
+							%tr
+								%td Tipo
+								%td
+									= m.select(:type_movie, [["Seleccionar",1],["BluRay","BluRay"],["DVD","DVD"],["CD","DVD"]])
+								%td
+								%td
+							%tr
+								%td Director:
+								%td
+									= m.text_field :directors, :size => 25, :placeholder => "Director", :class => "add"
+								%td
+								%td
+							%td Actores:
+							%td
+								= m.text_field :cast, :size => 25, :placeholder => "Actores", :class => "add"
+							%td
+							%td
+					= m.submit "Agregar", :class => "button_add"
+				%br/
+				%br/
+				%br/
