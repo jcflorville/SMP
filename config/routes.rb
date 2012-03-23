@@ -14,7 +14,8 @@ SMP::Application.routes.draw do
     resources :movies 
     resources :returns
     resources :sales
-    
+    resources :login
+    resources :home
 
   # Sample resource route with options:
   #   resources :products do
@@ -51,7 +52,7 @@ SMP::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-    root :to => 'home#index'
+    root :to => 'login#index'
 
   # See how all your routes lay out with "rake routes"
 

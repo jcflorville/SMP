@@ -375,6 +375,19 @@ html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 	float:left;
 	text-align:left;
 }
+#add_extra2{
+	margin-top:10px;
+	width:788px;
+	height:250px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#c1c1c1;
+	padding:5px;
+	border-radius:4px;
+	float:left;
+	text-align:center;
+	font-size:1.1em;
+}
 input.add {
 	margin-top:10px;
 	color: #c1c1c1;

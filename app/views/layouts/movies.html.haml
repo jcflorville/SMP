@@ -5,7 +5,19 @@
 		= stylesheet_link_tag    "application"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
-		%script{:src => "/assets/jquery-latest.js", :type => "text/javascript"}
+		%link{:href => "/assets/demos.css", :rel => "stylesheet"}
+		%link{:href => "/assets/jquery.ui.all.css", :rel => "stylesheet"}/
+		%script{:src => "/assets/jquery-1.6.2.js"}
+		%script{:src => "/assets/jquery.ui.core.js"}
+		%script{:src => "/assets/jquery.ui.widget.js"}
+		%script{:src => "/assets/jquery.ui.datepicker.js"}
+		:javascript
+			$(function() {
+				$( "#datepicker" ).datepicker();
+				$( "#datepicker2" ).datepicker();
+			});
+
+		
 		:javascript
 			$(document).ready(function(){
 
@@ -38,9 +50,15 @@
 				#menu
 					%ul.topnav
 						%li
-							%a{:href => "/movies"} INICIO
+							%a{:href => "/home"} INICIO
 						%li
-							%a{:href => "/sales/new"} VENDER
+							%a{:href => "#"} VENTAS
+							%ul.subnav
+								%li
+									%a{:href => "/sales"} Ver
+								%li
+									%a{:href => "/sales/new"} Nueva
+							%span
 						%li
 							%a{:href => "/returns/new"} RETORNAR
 						%li
@@ -49,11 +67,9 @@
 							%a{:href => "#"} PELICULAS
 							%ul.subnav
 								%li
+									%a{:href => "/movies"} Ver
+								%li
 									%a{:href => "/movies/new"} Agregar
-								%li
-									%a{:href => "#"} Modificar
-								%li
-									%a{:href => "#"} Eliminar
 							%span
 						%li
 							%a{:href => "#"} HERRAMIENTAS

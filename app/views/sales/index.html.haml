@@ -1,0 +1,76 @@
+#content
+	#content_inside2
+		#title
+			Ventas
+			%br/
+			%br/
+		%hr
+			%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
+				%thead
+					%tr
+						%th{:scope => "col"} Titulo (ESP)
+						%th{:scope => "col"} Titulo (ENG)
+						%th{:scope => "col"} Cantidad
+						%th{:scope => "col"} Codigo
+						%th{:scope => "col"} Fecha
+				%tfoot
+					%tr
+						%td{:colspan => "5"}
+							%em Ultimos 5 Vendidas
+				%tbody
+					%tr
+						%td Hugo
+						%td Hugo
+						%td 10
+						%td 1
+						%td 10/03/2012 - 3:00pm
+					%tr
+						%td Hugo
+						%td Hugo
+						%td 10
+						%td 1
+						%td 10/03/2012 - 3:00pm
+					%tr
+						%td Hugo
+						%td Hugo
+						%td 10
+						%td 1
+						%td 10/03/2012 - 3:00pm
+					%tr
+						%td Hugo
+						%td Hugo
+						%td 10
+						%td 1
+						%td 10/03/2012 - 3:00pm
+			%hr
+				#add
+					#add_extra2
+						#title
+							Reporte de Ventas
+							%br/
+							%br/
+						%table{:align => "center"}
+							%tr
+								%td
+									%a{:href => "#"} Ultimo Dia
+								%td
+									%a{:href => "#"} Ultimo Semana
+								%td
+									%a{:href => "#"} Ultimo Mes
+						%br/
+						#title
+							Personalizado
+						%br/
+						%table{:align => "center"}
+							%tr
+								%td Fecha Inicio
+								%td Fecha Fin
+							%tr
+								%td
+									%input#datepicker{:readonly => "", :type => "text"}
+								%td
+									%input#datepicker2{:readonly => "", :type => "text"}
+						%input.button_add{:type => "submit", :value => "Buscar"}
+				%br/
+				%br/
+				%br/
