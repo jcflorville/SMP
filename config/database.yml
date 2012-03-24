@@ -17,9 +17,9 @@ development:
   encoding: unicode
   database: SMP_development
   pool: 5
-  username: postgres
-  password: creative439
-  host: 192.168.1.10
+  username: allihay
+  password: allihay
+  host: localhost
   port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -45,13 +45,13 @@ test:
   encoding: unicode
   database: SMP_test
   pool: 5
-  username: postgres
-  password: 123456
+  username: allihay
+  password: allihay
 
 production:
   adapter: postgresql
   encoding: unicode
   database: SMP_production
   pool: 5
-  username: postgres
-  password: 123456
+  username: allihay
+  password: allihay
