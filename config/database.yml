@@ -17,9 +17,9 @@ development:
   encoding: unicode
   database: SMP_development
   pool: 5
-  username: allihay
-  password: allihay
-  host: localhost
+  username: postgres
+  password: creative439
+  host: 192.168.1.10
   port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
