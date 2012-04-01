@@ -7,9 +7,9 @@
 		%hr
 			#sale
 				#sale_info
-					Codigo:
-					%input.sale{:size => "25", :type => "text", :value => "CODIGO"}
-						%input.button_sale{:type => "submit", :value => "Agregar"}
+					Nombre pelicula:
+					%input.box{:size => "25", :type => "text", :placeholder => "PELICULA , ACTOR", :id => 'buscar'}
+						%input.button_sale{:type => "submit", :value => "Agregar", :id => "agregar"}
 							%br/
 							%br/
 							%br/
@@ -17,33 +17,20 @@
 								PELICULAS
 								%br/
 								%br/
-							%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
-								%thead
-									%tr
-										%th{:scope => "col"} Codigo
-										%th{:scope => "col"} Titulo
-										%th{:scope => "col"} Cantidad
-								%tfoot
-									%tr
-										%td{:colspan => "3"}
-											%em
-								%tbody
-									%tr
-										%td 1
-										%td Hugo
-										%td
-											%input{:size => "1", :type => "text", :value => "1"}/
-									%tr
-										%td 1
-										%td Hugo
-										%td
-											%input{:size => "1", :type => "text", :value => "1"}/
-									%tr
-										%td 1
-										%td Hugo
-										%td
-											%input{:size => "1", :type => "text", :value => "1"}/
-				%input.button_add{:type => "submit", :value => "Vender"}
+							= form_for(@sale) do |m|	
+								%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
+									%thead
+										%tr
+											%th{:scope => "col"} Titulo
+											%th{:scope => "col"} Cantidad
+									%tfoot
+										%tr
+											%td{:colspan => "3"}
+												%em
+										%tbody{:id => "list"}
+									= hidden_field :movie, :id
+									= hidden_field :movie, :name
+									%input.button_add{:type => "submit", :value => "Vender"}
 			%br/
 			%br/
 			%br/

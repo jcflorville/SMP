@@ -4,7 +4,7 @@
 			BUSQUEDA RAPIDA
 			%br/
 			%br/
-		%input.box{:size => "25", :type => "text", :value => "PELICULA , ACTOR"}
+		%input.box{:size => "25", :type => "text", :placeholder => "PELICULA , ACTOR", :id => 'buscar'}
 			%input.search{:type => "submit", :value => "Buscar"}
 				%br/
 				%br/
@@ -37,4 +37,4 @@
 									%td
 										= link_to "Ver", movie_path(movie)
 										= link_to "Editar", edit_movie_path(movie)
-										= button_to "Eliminar", movie_path(movie), :method=> :delete
+										= button_to "Eliminar", movie_path(movie), :method=> :delete, :confirm => "Esta seguro?"
