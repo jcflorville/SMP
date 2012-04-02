@@ -611,3 +611,8 @@ input.sale:focus {
 	font-weight:bold;
 }
 
+#sales_autocomplete
+{
+	width:600px;
+	margin:0 auto;
+}
