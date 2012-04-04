@@ -27,7 +27,7 @@
 							%tr
 								%td Categoria:
 								%td
-									= m.select(:category, [["Seleccionar",1],["Comedia","Comedia"],["Horror","Horror"],["Etc","Etc"]])
+									= m.select(:category, [["Seleccionar",1],["Accion","Accion"],["Aventura","Aventura"],["Comedia","Comedia"],["Drama","Drama"],["Horror","Horror"],["Concierto","Concierto"],["Ciencia Ficcion","Ciencia Ficcion"],["Misterio y Suspenso","Misterio y Suspenso"]])
 							%tr
 								%td IMDB ID:
 								%td
@@ -62,7 +62,7 @@
 								= m.text_field :cast, :size => 25, :placeholder => "Actores", :class => "add"
 							%td
 							%td
-					= m.submit "Agregar", :class => "button_add"
+					= m.submit "Agregar", :class => "button_add3", :id => "plus"
 				%br/
 				%br/
 				%br/

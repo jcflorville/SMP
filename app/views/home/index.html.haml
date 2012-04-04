@@ -5,59 +5,14 @@
         %img{:alt => "", :height => "92", :src => "/assets/tape_left.png", :width => "135"}/
       #tittle_center
         #title
-          BUSQUEDA RAPIDA
-          %br/
-          %br/
-        %input.box{:size => "25", :type => "text", :value => "PELICULA , ACTOR"}
-          %input.search{:type => "submit", :value => "Buscar"}
+          %img{:alt => "", :height => "100", :src => "/assets/Pantallazo-1.png", :width => "500"}/
+
       #tittle_box
         %img{:alt => "", :height => "92", :src => "/assets/tape_right.png", :width => "135"}/
     %br/
     %br/
     %hr
       %br/
-      #title ESTRENOS
-      %table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
-        %thead
-          %tr
-            %th{:scope => "col"} Titulo (ESP)
-            %th{:scope => "col"} Titulo (ENG)
-            %th{:scope => "col"} Disponible
-            %th{:scope => "col"} Codigo
-            %th{:scope => "col"} IMDB
-        %tfoot
-          %tr
-            %td{:colspan => "5"}
-              %em Ultimos 10 Estrenos
-        %tbody
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
       #title ULTIMAS PELICULAS VENDIDAS
       %table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
         %thead
@@ -65,82 +20,18 @@
             %th{:scope => "col"} Titulo (ESP)
             %th{:scope => "col"} Titulo (ENG)
             %th{:scope => "col"} Disponible
-            %th{:scope => "col"} Codigo
-            %th{:scope => "col"} IMDB
         %tfoot
           %tr
-            %td{:colspan => "5"}
-              %em Ultimos 5 Vendidas
+            %td{:colspan => "10"}
+              %em Ultimos 10 Vendidas
         %tbody
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-          %tr
-            %td Hugo
-            %td Hugo
-            %td 10
-            %td 1
-            %td
-              %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-      #title
-        PELICULAS MAS VENDIDAS
-        %div
-          %table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
-            %thead
-              %tr
-                %th{:scope => "col"} Titulo (ESP)
-                %th{:scope => "col"} Titulo (ENG)
-                %th{:scope => "col"} Disponible
-                %th{:scope => "col"} Codigo
-                %th{:scope => "col"} IMDB
-            %tfoot
-              %tr
-                %td{:colspan => "5"}
-                  %em Ultimos 5 Vendidas
-            %tbody
-              %tr
-                %td Hugo
-                %td Hugo
-                %td 10
-                %td 1
-                %td
-                  %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-              %tr
-                %td Hugo
-                %td Hugo
-                %td 10
-                %td 1
-                %td
-                  %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-              %tr
-                %td Hugo
-                %td Hugo
-                %td 10
-                %td 1
-                %td
-                  %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
-              %tr
-                %td Hugo
-                %td Hugo
-                %td 10
-                %td 1
-                %td
-                  %a{:href => "http://www.imdb.com/title/tt0970179/"} Link
+          - @sales.each do |sale|
+            %tr
+              %td
+                = sale.movie.title_esp
+              %td
+                = sale.movie.title_eng
+              %td
+                = sale.movie.stock
+            
+      

@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
 	
 	def index
-		@movies = Movie.limit(10)
+		@movies = Movie.limit(10).order("created_at DESC")
 		if params[:term]
-      @movies = Movie.where("movies.title_esp LIKE ? or movies.title_eng LIKE ?", "%#{params[:term]}%","%#{params[:term]}%")
+      @movies = Movie.where("movies.title_esp ILIKE ? or movies.title_eng ILIKE ?", "%#{params[:term]}%","%#{params[:term]}%")
       #@movies = Movie.search(params[:term]) 
       list = @movies.map {|u| Hash[ id: u.id, label: u.title_esp+ " / " + u.title_eng , name: u.title_esp]}
       render :json => list
@@ -21,7 +21,12 @@ class MoviesController < ApplicationController
 	end
 
 	def edit
+		p params
 		@movie = Movie.find(params[:id])
+
+		if params[:find] == "true"
+			render :json => @movie
+		end
 	end
 
 	def update
@@ -34,6 +39,10 @@ class MoviesController < ApplicationController
 		@movie = Movie.find(params[:id])
 		@movie.destroy
 		redirect_to movies_path
+	end
+
+	def show
+		@movie = Movie.find(params[:id])
 	end
 
 

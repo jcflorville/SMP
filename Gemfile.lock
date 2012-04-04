@@ -119,6 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
+  execjs
   haml
   jquery-rails
   paperclip (~> 2.7)
