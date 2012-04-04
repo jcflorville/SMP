@@ -1,15 +1,16 @@
 #content
 	#content_inside2
 		#title
-			VENDER PELICULAS
+			VENDER PELICULAS 
 			%br/
 			%br/
 		%hr
 			#sale
 				#sale_info
 					Nombre pelicula:
-					%input.box{:size => "25", :type => "text", :placeholder => "PELICULA , ACTOR", :id => 'buscar'}
-						%input.button_sale{:type => "submit", :value => "Agregar", :id => "agregar"}
+					#menu-container{:style => "position:absolute; width: 300px;"}
+					%input.box{:size => "25", :type => "text", :placeholder => "Nombre de pelicula", :id => 'buscar'}
+						%input.button_sale{:type => "submit", :value => "Agregar", :id => "agregar", :disabled => "disabled"}
 							%br/
 							%br/
 							%br/
@@ -17,20 +18,21 @@
 								PELICULAS
 								%br/
 								%br/
-							= form_for(@sale) do |m|	
-								%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
-									%thead
-										%tr
-											%th{:scope => "col"} Titulo
-											%th{:scope => "col"} Cantidad
-									%tfoot
-										%tr
-											%td{:colspan => "3"}
-												%em
-										%tbody{:id => "list"}
-									= hidden_field :movie, :id
-									= hidden_field :movie, :name
-									%input.button_add{:type => "submit", :value => "Vender"}
+								
+							%table#newspaper-b{:summary => "2007 Major IT Companies' Profit"}
+								%thead
+									%tr
+										%th{:scope => "col"} Titulo
+										%th{:scope => "col"} Cantidad
+								%tfoot
+									%tr
+										%td{:colspan => "3"}
+											%em
+									%tbody{:id => "list"}
+
+								= hidden_field :movie, :id
+								= hidden_field :movie, :name
+								%input.button_add{:type => "submit", :value => "Vender",:disabled => "disabled"}
 			%br/
 			%br/
 			%br/

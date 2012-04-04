@@ -8,8 +8,11 @@
 			#sale
 				#sale_info
 					Codigo:
-					%input.sale{:size => "25", :type => "text", :value => "CODIGO"}
-						%input.button_sale{:type => "submit", :value => "Retornar"}
-							%br/
-							%br/
-							%br/
+					#menu-container{:style => "position:absolute; width: 300px;"}
+					%input.box{:size => "25", :type => "text", :placeholder => "Nombre de pelicula", :id => 'buscar'}
+						%input.button_sale{:type => "submit", :value => "Retornar", :id => "retornar", :disabled => "disabled"}
+						= hidden_field :movie, :id
+						= hidden_field :movie, :name
+						%br/
+						%br/
+						%br/

@@ -9,6 +9,8 @@ gem 'pg'
 gem 'haml'
 gem "paperclip", "~> 2.7"
 gem 'rails3-jquery-autocomplete'
+gem 'execjs'
+
 
 
 # Gems used only for assets and not required

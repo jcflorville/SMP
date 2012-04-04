@@ -10,17 +10,15 @@
           %img{:alt => "", :height => "318", :src => "/assets/image.jpg"}/
           %br/
         #movie_info
-          #movie_tittle El Senor de los Anillos
-          The Lord of the Rings
+          #movie_tittle 
+            = "#{@movie.title_esp} / #{@movie.title_eng} "
           #movie_descrip
             %br/
-            %br/
-            An innocent hobbit of The Shire journeys with eight companions to the fires of Mount Doom to destroy the One Ring and the dark lord Sauron forever.
-            %a{:href => "#"} IMDB
+            = @movie.description
             %br/
             %br/
             %b Tipo:
-            Accion
+            = @movie.category
             %br/
             %b Actores:
             Elijah Wood, Ian McKellen, Orlando Bloom

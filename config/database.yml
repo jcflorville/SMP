@@ -16,10 +16,10 @@ development:
   adapter: postgresql
   encoding: unicode
   database: SMP_development
-  pool: 5
+  pool: 8
   username: postgres
-  password: creative439
-  host: 192.168.1.10
+  password: 123456
+  host: localhost
   port: 5432
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -41,12 +41,14 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: postgresql
+  aadapter: postgresql
   encoding: unicode
-  database: SMP_test
+  database: SMP_development
   pool: 5
-  username: allihay
-  password: allihay
+  username: postgres
+  password: 123456
+  host: localhost
+  port: 5432
 
 production:
   adapter: postgresql
