@@ -10,38 +10,24 @@
 					%tr
 						%th{:scope => "col"} Titulo (ESP)
 						%th{:scope => "col"} Titulo (ENG)
-						%th{:scope => "col"} Cantidad
-						%th{:scope => "col"} Codigo
 						%th{:scope => "col"} Fecha
 				%tfoot
 					%tr
 						%td{:colspan => "5"}
-							%em Ultimos 5 Vendidas
+							-if @count
+								%em
+									= "Total vendidas: #{@count}"
+							
 				%tbody
-					%tr
-						%td Hugo
-						%td Hugo
-						%td 10
-						%td 1
-						%td 10/03/2012 - 3:00pm
-					%tr
-						%td Hugo
-						%td Hugo
-						%td 10
-						%td 1
-						%td 10/03/2012 - 3:00pm
-					%tr
-						%td Hugo
-						%td Hugo
-						%td 10
-						%td 1
-						%td 10/03/2012 - 3:00pm
-					%tr
-						%td Hugo
-						%td Hugo
-						%td 10
-						%td 1
-						%td 10/03/2012 - 3:00pm
+					- @sales.each do |sales|				
+						%tr
+							%td
+								= "#{sales.movie.title_esp}"
+							%td
+								= "#{sales.movie.title_eng}"
+							%td
+								= "#{sales.created_at.strftime("%d-%m-%Y a las %I:%M:%S %P")}"
+					
 			%hr
 				#add
 					#add_extra2
@@ -52,25 +38,22 @@
 						%table{:align => "center"}
 							%tr
 								%td
-									%a{:href => "#"} Ultimo Dia
-								%td
-									%a{:href => "#"} Ultimo Semana
-								%td
-									%a{:href => "#"} Ultimo Mes
+									%a{:href => sales_path+"?today=1"} Ventas del dia
 						%br/
 						#title
 							Personalizado
 						%br/
-						%table{:align => "center"}
-							%tr
-								%td Fecha Inicio
-								%td Fecha Fin
-							%tr
-								%td
-									%input#datepicker{:readonly => "", :type => "text"}
-								%td
-									%input#datepicker2{:readonly => "", :type => "text"}
-						%input.button_add{:type => "submit", :value => "Buscar"}
+						= form_for(sales_path, :method => :get) do |m|
+							%table{:align => "center"}
+								%tr
+									%td Fecha Inicio
+									%td Fecha Fin
+								%tr
+									%td
+										= text_field_tag :datepicker
+									%td
+										= text_field_tag :datepicker2
+							%input.button_add4{:type => "submit", :value => "Buscar"}
 				%br/
 				%br/
 				%br/
