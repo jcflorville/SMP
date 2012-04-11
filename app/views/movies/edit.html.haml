@@ -15,7 +15,7 @@
 							%tr
 								%td Titulo (ESP):
 								%td
-									= m.text_field :title_esp, :size => 25, :placeholder => "TITULO ESPANOL", :class => "add"
+									= m.text_field :title_esp, :size => 25, :placeholder => "TITULO ESPANOL", :class => "add", :autocomplete => :off
 							%tr
 								%td Titulo (ENG):
 								%td
@@ -27,42 +27,20 @@
 							%tr
 								%td Categoria:
 								%td
-									= m.select(:category, [["Seleccionar",1],["Comedia","Comedia"],["Horror","Horror"],["Etc","Etc"]])
-							%tr
-								%td IMDB ID:
-								%td
-									= m.text_field :imdb, :size => 25, :placeholder => "ID", :class => "add"
-							%tr
-								%td Descripcion:
-								%td
-									= m.text_area :description, :cols => "52", :name => "Descrip", :rows => "4", :class => "descripcion" 
-					#add_extra
+									= m.select(:category, [["Seleccionar",1],["Accion","Accion"],["Animadas","Animadas"],["Comedia","Comedia"],["Drama","Drama"],["Horror","Horror"],["Concierto","Concierto"],["Ciencia Ficcion","Ciencia Ficcion"],["Misterio y Suspenso","Misterio y Suspenso"], ["Infantiles","Infantiles"], ["Peliculas Musicales","Peliculas MUsicales"],["Adultos","Adultos"],["Aventura","Aventura"],["Documentales","Documentales"],["Deportes","Deportes"],["Asiaticas","Asiaticas"],["MP3","MP3"]])					#add_extra
 						%table
-							%tr
-								%td Calidad
-								%td
-									= m.select(:quality, [["Seleccionar",1],["Original","Original"],["Cine","Cine"],["Estandar","Estandar"]])
-								%td Menu
-								%td
-									= m.select(:menu, [["Seleccionar",1],["SI","SI"],["NO","NO"]])
-							%tr
-								%td Tipo
-								%td
-									= m.select(:type_movie, [["Seleccionar",1],["BluRay","BluRay"],["DVD","DVD"],["CD","DVD"]])
-								%td
-								%td
 							%tr
 								%td Director:
 								%td
-									= m.text_field :directors, :size => 25, :placeholder => "Director", :class => "add"
+									= m.text_field :directors, :size => 10, :placeholder => "Director", :class => "add"
+							%tr
+								%td Actores:
+								%td
+									= m.text_field :cast, :size => 25, :placeholder => "Actores", :class => "add"
+							%tr
 								%td
 								%td
-							%td Actores:
-							%td
-								= m.text_field :cast, :size => 25, :placeholder => "Actores", :class => "add"
-							%td
-							%td
-					= m.submit "Editar", :class => "button_add2", :id => "edit"
+									= m.submit "Agregar", :class => "button_add3", :id => "plus"
 				%br/
 				%br/
 				%br/
