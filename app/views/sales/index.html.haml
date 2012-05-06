@@ -19,15 +19,16 @@
 									= "Total vendidas: #{@count}"
 							
 				%tbody
-					- @sales.each do |sales|				
-						%tr
-							%td
-								= "#{sales.movie.title_esp}"
-							%td
-								= "#{sales.movie.title_eng}"
-							%td
-								= "#{sales.created_at.strftime("%d-%m-%Y a las %I:%M:%S %P")}"
-					
+					- @sales.each do |sales|
+						- if !sales.movie.nil?				
+							%tr
+								%td
+									= "#{sales.movie.title_esp}"
+								%td
+									= "#{sales.movie.title_eng}"
+								%td
+									= "#{sales.created_at.strftime("%d-%m-%Y a las %I:%M:%S %P")}"
+						
 			%hr
 				#add
 					#add_extra2

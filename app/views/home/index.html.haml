@@ -27,10 +27,12 @@
         %tbody
           - @sales.each do |sale|
             %tr
+              %td 
+                - if !sale.movie.title_esp.nil? 
+                  = sale.movie.title_esp
               %td
-                = sale.movie.title_esp
-              %td
-                = sale.movie.title_eng
+                -if !sale.movie.title_eng.nil?
+                  = sale.movie.title_eng
               %td
                 = sale.movie.stock
             

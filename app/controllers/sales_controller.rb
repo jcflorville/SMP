@@ -2,7 +2,7 @@ class SalesController < ApplicationController
 	layout "movies"
 
 	def index
-		@sales = Sale.limit(5)
+		@sales = Sale.order("created_at DESC").limit(5)
 		if params[:today]
 			@sales = Sale.where(:created_at => DateTime.now.at_beginning_of_day..DateTime.now)
 			@count = @sales.count
